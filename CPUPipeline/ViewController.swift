@@ -106,6 +106,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         default:
             break
         }
+        render()
     }
     
     private func close() {
