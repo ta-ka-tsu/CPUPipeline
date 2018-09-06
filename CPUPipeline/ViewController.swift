@@ -10,17 +10,6 @@ import UIKit
 import QuartzCore
 import simd
 
-class PlatingMetalLayer : CALayer {
-    override init() {
-        super.init()
-//        super.contentsFormat
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
 class ViewController: UIViewController, UIGestureRecognizerDelegate {
 
     var scaleFactor:CGFloat = UIScreen.main.scale
