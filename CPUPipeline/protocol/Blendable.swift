@@ -21,12 +21,3 @@ extension Blendable {
         return (-1) * val
     }
 }
-
-extension float2 : Blendable {
-}
-
-extension float3 : Blendable {
-}
-
-extension float4 : Blendable {
-}

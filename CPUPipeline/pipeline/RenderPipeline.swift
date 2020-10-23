@@ -108,7 +108,10 @@ class RenderPipeline<T:Blendable, U:Blendable> {
                 let (w1, w2, w3) = weight(v1: v1, v2: v2, v3: v3, of: p) ?? (-1, -1, -1)
                 if w1 < 0 || w2 < 0 || w3 < 0 { continue }
                 let eachZ = w1 * v1.position.z + w2 * v2.position.z + w3 * v3.position.z
-                let eachAttr = w1 * v1.attribute + w2 * v2.attribute + w3 * v3.attribute
+                let temp1 = w1 * v1.attribute
+                let temp2 = w2 * v2.attribute
+                let temp3 = w3 * v3.attribute
+                let eachAttr = temp1 + temp2 + temp3
                 result.append(Fragment(x: px, y: py, z: eachZ, attribute: eachAttr))
             }
         }
