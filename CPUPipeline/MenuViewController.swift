@@ -105,6 +105,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         guard let vc = segue.destination as? ViewController else {
             return
         }
+        vc.modalPresentationStyle = .fullScreen
         vc.pipeline.vertexBuffer = dataSources[selected].vertices
         vc.pipeline.fragmentShader = dataSources[selected].fragmentShader
         MenuViewController.currentTexture = dataSources[selected].texture
