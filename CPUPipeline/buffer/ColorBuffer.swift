@@ -12,7 +12,8 @@ import CoreGraphics
 
 class ColorBuffer : BufferPlane {
     static let numberOfComponents = 4 // RGBA
-    
+    static let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.noneSkipLast.rawValue)
+
     let width: Int
     let height: Int
     var buffer : [UInt8]
@@ -64,7 +65,7 @@ class ColorBuffer : BufferPlane {
                     bitsPerPixel: bitsPerPixel,
                     bytesPerRow: bytesPerPixel * self.width,
                     space: CGColorSpaceCreateDeviceRGB(),
-                    bitmapInfo: [],
+                    bitmapInfo: Self.bitmapInfo,
                     provider: dataProvider!,
                     decode: nil,
                     shouldInterpolate: false,
